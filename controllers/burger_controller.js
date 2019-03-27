@@ -8,9 +8,9 @@ var burger = require("../models/burger.js");
 router.get("/", function (req, res) {
     //return all data from burger_db.burger
     burger.all(function (data) {
-        let hbObj = { burger: data };
-        console.log(hbObj);
-        res.render("index", hbObj);
+        let hbsObj = { burger: data };
+        console.log(hbsObj, data);
+        res.render("index", hbsObj);
 
     });
 });

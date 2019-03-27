@@ -1,8 +1,8 @@
-let express = require("express");
+var express = require("express");
 
-let PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
-let app = express();
+var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
