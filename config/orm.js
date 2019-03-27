@@ -1,14 +1,14 @@
 // Dependencies
 // =============================================================
-const connection = require("./connection.js");
+var connection = require("./connection.js");
 
 // ORM
 // =============================================================
-const sql = '';
+var sql = '';
 //Create ORM
 
-const orm = {
-    selectAll: function (table, callback) {
+var orm = {
+    all: function (table, callback) {
         sql = "SELECT * FROM ??"
         connection.query(sql, [table], function (err, result) {
 
@@ -16,14 +16,14 @@ const orm = {
         })
 
     },
-    insertOne: function (table,col,val) {
+    create: function (table,col,val) {
         sql = "INSERT INTO ?? (??) VALUES (??) "
         connection.query(sql, [table, col, val], function (err, result) {
 
             callback(result);
         })
     },
-    updateOne: function (table,col,val,where) {
+    update: function (table,col,val,where) {
 
         sql = "UPDATE ?? SET ?? = ?? WHERE ??";
         connection.query(sql, [table,col,val,where], function (err, result) {

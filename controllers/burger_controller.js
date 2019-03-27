@@ -1,16 +1,16 @@
-let express = require("express");
-let router = express.Router();
+var express = require("express");
+var router = express.Router();
 
 //burger DB functions
-let burger = require("../models/burger.js");
+var burger = require("../models/burger.js");
 
 
 router.get("/", function (req, res) {
     //return all data from burger_db.burger
     burger.all(function (data) {
         let hbObj = { burger: data };
-        console.log(`DATA: ${hbObj}`);
-        res.render("index", hbsObj);
+        console.log(hbObj);
+        res.render("index", hbObj);
 
     });
 });
