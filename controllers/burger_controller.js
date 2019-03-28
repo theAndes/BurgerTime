@@ -28,7 +28,11 @@ router.post("/api/burger", function (req, res) {
 
 
 router.put("/api/burger/:id", function (req, res) {
-    let where = 'id = ' + req.params.id;
+    let where = req.params.id;
+    console.log('====================================');
+    console.log("where: ",where);
+    console.log('====================================');
+console.log(req.body.devoured);
 
     burger.update(
         "devoured",         // column
