@@ -1,25 +1,66 @@
-<h1>Burgers!</h1>
+<main class="v-header container">
 
-<ul>
-    {{#each burger}}
+  {{!-- video of cows --}}
+  <Section class="fullscreen-video-wrap">
+    <video src="/assets/img/calf.mp4" loop autoplay muted>
+    </video>
+  </Section>
+  {{!-- overlay for cow video --}}
+  <div class="header-overlay"></div>
 
-    <li>
-        <div> {{burger_name}}
-            <button class="devoured" data-id="{{id}}" data-devoured="{{devoured}}">
-                {{#unless devoured}}EAT ME!{{/unless}}
-            </button>
-        </div>
-        {{/each}}
-    </li>
-</ul>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
 
-    <div class="form-group">
-        <label for="burger">Burger Type:</label>
-        <input type="text" id="burger" name="name">
-        <button type="submit">Add burger</button>
+
+  {{!-- Content --}}
+  <article class="header-content text-md-center">
+
+    {{!-- Header --}}
+    <h1>It's Burger Time!</h1>
+
+
+    {{!-- Form to add new burgers --}}
+    <form class="create-form">
+      <div class="form-group">
+        <label for="burger">Enter your desired burger:</label>
+        <input type="text" id="burger" name="name" required autofocus>
+        <button class="btn" type="submit">Add burger to your menu!</button>
+      </div>
+    </form>
+
+    <div class="grid">
+      <div class="burger-items not-devoured">
+      <h2>Burgers you want to eat!</h2>
+        <ul>
+          {{#each burger}}
+          <li>
+            {{#unless devoured}}
+            {{burger_name}}
+            <div>
+              <button class="devoured" data-id="{{id}}" data-devoured="{{devoured}}" title="Eat ME!">
+                <i class="fas fa-utensils"></i>
+              </button>
+            </div>
+            {{/unless}}
+            {{/each}}
+          </li>
+        </ul>
+      </div>
+      <div class="burger-items">
+        <h2>Burgers you ate!</h2>
+        <ul>
+          {{#each burger}}
+          {{#if devoured}}
+          <li>
+            <i class="far fa-grin-beam-sweat"></i>
+            {{burger_name}}
+            <i class="far fa-grin-beam-sweat"></i>
+          </li>
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
     </div>
+      <a href="https://andrewesquivel.com/">Back to Portfolio</a>
 
-</form>
+  </article>
+</main>
