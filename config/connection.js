@@ -8,7 +8,7 @@ var mysql = require("mysql");
 
 // Set up our connection information
 if (process.env.JAWSDB_URL) {
- var connection=mysql.connection(process.env.JAWSDB_URL)
+ var connection=mysql.createConnection(process.env.JAWSDB_URL)
 }
 else{
 var connection = mysql.createConnection({
