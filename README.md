@@ -5,4 +5,4 @@ express-handlebars.
 
 
 
-[The burger APP]: https://immense-sea-67850.herokuapp.com/
+[The burger APP](https://immense-sea-67850.herokuapp.com/)
